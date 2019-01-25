@@ -12,9 +12,7 @@ class BroadcastController extends Controller
     public function broadcast(Request $request, $token)
     {
 
-	    $data = $request->data;
-
-		broadcast(new ServerEvent($data, $token))->toOthers();
+		broadcast(new ServerEvent($request->all(), $token))->toOthers();
 
 		return response(['success'], 200);
 
