@@ -21,8 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/client', function (Request $request) {
 
-	broadcast(new NewLogin($request->all()))->toOthers();
+	$token = $request->token;
 
-	return response(['success'], 200);	
+	broadcast(new NewLogin($request->all(), $token))->toOthers();
+
+	return response(['success'], 200);
 
 });

@@ -28,3 +28,8 @@ Route::get('/test', function(Request $request){
 
 	return response(['success'], 200);
 })->name('test');
+
+
+Route::get('create/clients', 'Admin\ClientController@create');
+
+Route::post('/save/client', 'Admin\ClientController@save');

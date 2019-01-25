@@ -22,12 +22,13 @@ class NewLogin implements ShouldBroadcast
      */
 
     public $message;
+
     
-    public function __construct($message)
+    public function __construct($message, $token)
     {
         
         $this->message = $message;
-
+        $this->token = $token;
     }
 
     /**
@@ -37,7 +38,7 @@ class NewLogin implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('status');
+        return new Channel('status_'.$this->token);
     }
 
     public function broadcastAs()
