@@ -30,4 +30,4 @@ Route::post('/client', function (Request $request) {
 });
 
 
-Route::post('/broadcast/client', 'BroadcastController@broadcast');
+Route::post('/broadcast/client', 'Admin\BroadcastController@broadcast');
