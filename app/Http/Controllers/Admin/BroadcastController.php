@@ -9,10 +9,8 @@ use App\Events\ServerEvent;
 class BroadcastController extends Controller
 {
 
-    public function broadcast(Request $request)
+    public function broadcast(Request $request, $token)
     {
-
-	    $token = $request->token;
 
 	    $data = $request->data;
 
