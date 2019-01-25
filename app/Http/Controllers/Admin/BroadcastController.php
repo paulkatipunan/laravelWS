@@ -14,7 +14,7 @@ class BroadcastController extends Controller
 
 	    $token = $request->token;
 
-		broadcast(new ServerEvent($request->all(), $token))->toOthers();
+		broadcast(new ServerEvent(request('message'), $token))->toOthers();
 
 		return response(['success'], 200);
 
