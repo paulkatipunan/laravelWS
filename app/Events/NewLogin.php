@@ -23,6 +23,7 @@ class NewLogin implements ShouldBroadcast
 
     public $message;
 
+    public $token;
     
     public function __construct($message, $token)
     {
