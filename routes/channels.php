@@ -18,6 +18,8 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 
 
 
-Broadcast::channel('status', function ($message) {
-    return $message;
+Broadcast::channel('ServerChannel_.{token}', function ($message) {
+
+    return $message->message;
+    
 });
