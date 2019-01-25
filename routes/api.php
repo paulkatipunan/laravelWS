@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Events\NewLogin;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,13 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+Route::post('/client', function (Request $request) {
+
+	broadcast(new NewLogin($request->all()))->toOthers();
+
+	return response(['success'], 200);	
+
 });
