@@ -28,3 +28,6 @@ Route::post('/client', function (Request $request) {
 	return response(['success'], 200);
 
 });
+
+
+Route::post('/broadcast/client', 'BroadcastController@broadcast');
