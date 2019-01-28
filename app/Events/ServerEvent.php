@@ -21,14 +21,14 @@ class ServerEvent implements ShouldBroadcast
      * @return void
      */
 
-    public $message;
+    public $data;
 
     public $token;
     
-    public function __construct($message, $token)
+    public function __construct($data, $token)
     {
         
-        $this->message = $message;
+        $this->data = $data;
         $this->token = $token;
     }
 
