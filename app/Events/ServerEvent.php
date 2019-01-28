@@ -25,11 +25,11 @@ class ServerEvent implements ShouldBroadcast
 
     public $token;
     
-    public function __construct($data, $token)
+    public function __construct($data)
     {
         
         $this->data = $data;
-        $this->token = $token;
+      
     }
 
     /**
@@ -37,9 +37,9 @@ class ServerEvent implements ShouldBroadcast
      *
      * @return \Illuminate\Broadcasting\Channel|array
      */
-    public function broadcastOn()
+    public function broadcastOn($token)
     {
-        return new Channel('ServerChannel_'.$this->token);
+        return new Channel('ServerChannel_'.$token);
     }
 
     public function broadcastAs()
