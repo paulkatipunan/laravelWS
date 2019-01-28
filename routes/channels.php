@@ -20,6 +20,6 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 
 Broadcast::channel('ServerChannel_.{token}', function ($message) {
 
-    return $message->message;
+    return '';
     
 });
